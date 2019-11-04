@@ -9,4 +9,3 @@ De datavisualisatie is gemaakt met d3 en verder is alleen JavaScript gebruikt.
 * d3
 
 ## Concept
-

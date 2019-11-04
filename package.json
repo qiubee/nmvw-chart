@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/qiubee/functional-programming/issues"
   },
-  "homepage": "https://github.com/qiubee/functional-programming#readme"
+  "homepage": "https://github.com/qiubee/functional-programming#readme",
+  "dependencies": {
+    "d3": "^5.12.0"
+  }
 }
