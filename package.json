@@ -1,0 +1,22 @@
+{
+  "name": "functional-programming",
+  "version": "1.0.0",
+  "description": "Datavisualisation for Tropenmuseum using data from NMVW",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiubee/functional-programming.git"
+  },
+  "keywords": [
+    "datavisualisation"
+  ],
+  "author": "qiubee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qiubee/functional-programming/issues"
+  },
+  "homepage": "https://github.com/qiubee/functional-programming#readme"
+}
