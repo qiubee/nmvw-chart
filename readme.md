@@ -37,3 +37,7 @@ SELECT ?placeName ?type (COUNT(?obj) AS ?objAmount)  WHERE {
 }
 ORDER BY DESC(?objAmount)
 ```
+
+## License
+
+MIT
