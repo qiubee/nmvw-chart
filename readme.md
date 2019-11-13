@@ -60,6 +60,8 @@ SELECT ?placeName ?type (COUNT(?obj) AS ?objAmount)  WHERE {
 ORDER BY DESC(?objAmount)
 ```
 
+### Opschonen data
+
 Hoe het data-opschoon-patroon gemaakt is, is te zien in de wiki bij **[Proces data opschonen (NMVW)]()**.
 
 Ook heb ik de data van een studentenenquete opgeschoond d.m.v. functional programming. Dit is te vinden in de wiki bij **[Proces data opschonen (studentenenquête)](https://github.com/qiubee/functional-programming/wiki/Proces-data-opschonen-(studentenenqu%C3%AAte))**.
