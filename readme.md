@@ -2,7 +2,7 @@
 
 Voor een nieuwe tentoonstelling over de collectie van het Tropenmuseum in Amsterdam wil tentoonstellingmaker Rik Herder met visualisaties laten zien wat er in een groter geheel te vinden is in de collectie van het Nationaal Museum van Wereldculturen. Zijn insteek is om de iconen van de collectie uit te lichten. Hij heeft mij de opdracht gegeven om een van zo'n visualisatie te maken.
 
-De datavisualisatie is gemaakt met d3. Verder zijn Node.js en Express gebruikt om dynamisch de data weer te geven.
+De datavisualisatie is gemaakt met d3. Verder zijn Node.js en Express gebruikt voor het bouwen van de applicatie.
 
 **[Bekijk datavisualisatie](https://qiubee.github.io/functional-programming/)**
 
@@ -11,6 +11,8 @@ De datavisualisatie is gemaakt met d3. Verder zijn Node.js en Express gebruikt o
 * [Node.js](https://nodejs.org/en/)
 * [Express](https://expressjs.com/)
 * [d3](https://d3js.org/)
+
+Andere benodigdheden zijn te vinden in [`package.json`](https://github.com/qiubee/functional-programming/blob/master/package.json)
 
 ## Concept
 
