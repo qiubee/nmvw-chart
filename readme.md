@@ -32,13 +32,13 @@ Gebruik `localhost:8000` in de browser om de app te tonen.
 
 ## Data
 
-De data wordt opgehaald uit de API van het NMVW. De data die daaruit wil ophalen is:
+De data wordt opgehaald uit de API van het NMVW. Het NMVW gebruikt SPARQL voor het ophalen van data uit de collectie. De data die daaruit op wil halen is:
 
 * Geografische herkomst
 * Categorie
 * Aantal objecten per werelddeel
 
-In SPARQL heb ik `dct:spatial` en `dc:type` gebruikt voor de plaats en het type. En met `(COUNT() AS())` heb ik het aantal objecten op bij elkaar opgeteld.
+In SPARQL heb ik `dct:spatial` en `dc:type` gebruikt om de plaats en het type van het object op te halen. En met `(COUNT() AS())` heb ik het aantal objecten op bij elkaar opgeteld.
 
 Hieronder staat de query die ik heb gebruikt voor het ophalen van de data:
 
