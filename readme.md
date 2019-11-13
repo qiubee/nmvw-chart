@@ -4,6 +4,8 @@ Voor een nieuwe tentoonstelling over de collectie van het Tropenmuseum in Amster
 
 De datavisualisatie is gemaakt met d3. Verder zijn Node.js en Express gebruikt om dynamisch de data weer te geven.
 
+**[Bekijk datavisualisatie](https://qiubee.github.io/functional-programming/)**
+
 ## Benodigdheden
 
 * [Node.js](https://nodejs.org/en/)
