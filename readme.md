@@ -16,9 +16,25 @@ Een datavisualisatie die de collectie van het Nationaal Museum van Wereldculture
 
 ![World map with pie charts showing top 3 of categories with the most objects found in the collection of the National Museum of Worldcultures](https://github.com/qiubee/functional-programming/blob/master/images/Concept-small.jpg)
 
+## Installeren
+
+Om het project te installeren typ het volgende in de terminal:
+
+1. `git clone https://github.com/qiubee/functional-programming.git`
+2. `npm install`
+3. `npm start`
+
+Gebruik `localhost:8000` in de browser om de app te tonen.
+
 ## Data
 
-De data wil ik halen uit de API van het NMVW. De data die daaruit wil halen is de Geografische herkomst van objecten, de categorie van de objecten en het aantal objecten per werelddeel en per categorie. In SPARQL heb ik `dct:spatial` en `dc:type` gebruikt voor de plaats en het type. En met `(COUNT() AS())` heb ik het aantal objecten op bij elkaar opgeteld.
+De data wordt opgehaald uit de API van het NMVW. De data die daaruit wil ophalen is:
+
+* Geografische herkomst
+* Categorie
+* Aantal objecten per werelddeel
+
+In SPARQL heb ik `dct:spatial` en `dc:type` gebruikt voor de plaats en het type. En met `(COUNT() AS())` heb ik het aantal objecten op bij elkaar opgeteld.
 
 Hieronder staat de query die ik heb gebruikt voor het ophalen van de data:
 
@@ -40,6 +56,10 @@ SELECT ?placeName ?type (COUNT(?obj) AS ?objAmount)  WHERE {
 ORDER BY DESC(?objAmount)
 ```
 
-## License
+Hoe het data-opschoon-patroon gemaakt is, is te zien in de wiki bij **[Proces data opschonen (NMVW)]()**.
+
+Ook heb ik de data van een studentenenquete opgeschoond d.m.v. functional programming. Dit is te vinden in de wiki bij **[Proces data opschonen (studentenenquête)](https://github.com/qiubee/functional-programming/wiki/Proces-data-opschonen-(studentenenqu%C3%AAte))**.
+
+## Licentie
 
 MIT
