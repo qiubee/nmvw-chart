@@ -22,6 +22,7 @@
   "homepage": "https://github.com/qiubee/functional-programming#readme",
   "dependencies": {
     "d3-collection": "^1.0.7",
+    "d3-selection": "^1.4.0",
     "express": "^4.17.1"
   },
   "devDependencies": {
