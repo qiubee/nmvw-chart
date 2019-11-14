@@ -1,5 +1,7 @@
 /*jshint esversion: 8 */
 
+import { select } from "d3-selection";
+
 const nmvw = {
     apiURL: "https://api.data.netwerkdigitaalerfgoed.nl/datasets/ivo/NMVW/services/NMVW-05/sparql",
     apiQuery: `
@@ -41,12 +43,12 @@ async function getData(url, query) {
     const response = await fetch(url+ "?query=" + encodeURIComponent(query) + "&format=json");
     const json = await response.json();
     const data = await json.results.bindings;
-    const cleanData = await data.map(item => {
+    const normalizedData = await data.map(item => {
         let newArr = {};
         newArr.amount = Number(item.objCount.value);
         newArr.category = item.type.value;
         newArr.place = item.placeName.value;
         return newArr;
     });
-    console.log(cleanData);
+    console.log(normalizedData);
 }
