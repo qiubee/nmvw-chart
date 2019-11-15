@@ -1,3 +1,4 @@
+// object met nmvw info
 const nmvw = {
     apiURL: "https://api.data.netwerkdigitaalerfgoed.nl/datasets/ivo/NMVW/services/NMVW-05/sparql",
     apiQuery: `
@@ -18,19 +19,44 @@ const nmvw = {
     continentLinks: ["https://hdl.handle.net/20.500.11840/termmaster6025", "https://hdl.handle.net/20.500.11840/termmaster3", "https://hdl.handle.net/20.500.11840/termmaster8401", "https://hdl.handle.net/20.500.11840/termmaster6782", "https://hdl.handle.net/20.500.11840/termmaster19804", "https://hdl.handle.net/20.500.11840/termmaster18062"], // Europe, Afrika, Asia, Oceania, Amerika, North Pole, Antartica
 };
 
-// async / await
+// data ophalen met async / await
 getData(nmvw.apiURL, nmvw.apiQuery);
 
 async function getData(url, query) {
     const response = await fetch(url+ "?query=" + encodeURIComponent(query) + "&format=json");
     const json = await response.json();
     const data = await json.results.bindings;
-    const cleanData = await data.map(item => {
+    const normalizedData = await data.map(item => {
         let newArr = {};
         newArr.amount = Number(item.objCount.value);
         newArr.category = item.type.value;
         newArr.place = item.placeName.value;
         return newArr;
     });
-    console.log(cleanData);
+    console.log(normalizedData);
 }
+
+// d3
+let projection = d3.geoEqualEarth();
+let path = d3.geoPath().projection(projection);
+
+let svg = d3.select("#map").append("svg")
+    .attr("width", "40em")
+    .attr("height", "40em");
+
+//let g = svg.append("g");
+
+let map = svg.append("path")
+    .attr("fill", "#f9f9f9")
+    .attr("d", path)
+    .style("stroke", "#fff");
+
+d3.json("https://unpkg.com/world-atlas@1.1.4/world/110m.json", function(error, data) {
+    
+svg.append("path")
+    .data(data.objects)
+    .enter().append("path")
+        .attr("fill", "#f9f9f9")
+        .attr("d", path)
+        .style("stroke", "#fff");
+});
