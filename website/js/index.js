@@ -1,5 +1,8 @@
 /*jshint esversion: 8 */
 
+import { select, json, geoPath, geoEqualEarth } from "d3";
+import { feature } from "topojson";
+
 // object met nmvw info
 const nmvw = {
     apiURL: "https://api.data.netwerkdigitaalerfgoed.nl/datasets/ivo/NMVW/services/NMVW-05/sparql",
@@ -18,33 +21,24 @@ const nmvw = {
         ?place skos:prefLabel ?placeName .
     }
     ORDER BY DESC(?objCount)`,
-    continentLinks: ["https://hdl.handle.net/20.500.11840/termmaster6025", "https://hdl.handle.net/20.500.11840/termmaster3", "https://hdl.handle.net/20.500.11840/termmaster8401", "https://hdl.handle.net/20.500.11840/termmaster6782", "https://hdl.handle.net/20.500.11840/termmaster19804", "https://hdl.handle.net/20.500.11840/termmaster18062"], // Europe, Africa, Asia, Oceania, Amerika, North Pole, Antartica
+    continentLinks: ["https://hdl.handle.net/20.500.11840/termmaster6025", "https://hdl.handle.net/20.500.11840/termmaster3", "https://hdl.handle.net/20.500.11840/termmaster8401", "https://hdl.handle.net/20.500.11840/termmaster6782", "https://hdl.handle.net/20.500.11840/termmaster19804", "https://hdl.handle.net/20.500.11840/termmaster18062"], // Europa, Afrika, Azie, Oceanie, Amerika, Noordpool, Antartica
 };
 getData(nmvw.apiURL, nmvw.apiQuery);
 
-// visualiseren met d3
-let projection = d3.geoEqualEarth();
-let path = d3.geoPath().projection(projection);
+// visualiseren met d3 (voorbeeld kaart -> https://www.youtube.com/watch?v=Qw6uAg3EO64)
+const svg = select("svg");
+const projection = geoEqualEarth();
+const pathGenerator = geoPath().projection(projection);
 
-let svg = d3.select("#map").append("svg")
-    .attr("width", "40em")
-    .attr("height", "40em");
+json("https://unpkg.com/world-atlas@1.1.4/world/110m.json")
+    .then(data => {
+    const countries = feature(data, data.objects.countries);
+    console.log(countries);
 
-//let g = svg.append("g");
-
-let map = svg.append("path")
-    .attr("fill", "#f9f9f9")
-    .attr("d", path)
-    .style("stroke", "#fff");
-
-d3.json("https://unpkg.com/world-atlas@1.1.4/world/110m.json", function(error, data) {
-    
-svg.append("path")
-    .data(data.objects)
-    .enter().append("path")
-        .attr("fill", "#f9f9f9")
-        .attr("d", path)
-        .style("stroke", "#fff");
+    const paths = svg.selectAll("path")
+        .data(countries.features);
+    paths.enter().append("path")
+        .attr("d", d => pathGenerator(d))
 });
 
 // data ophalen met async / await
