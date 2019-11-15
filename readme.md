@@ -68,4 +68,4 @@ Ook heb ik de data van een studentenenquete opgeschoond d.m.v. functional progra
 
 ## Licentie
 
-MIT
+**[MIT](https://github.com/qiubee/functional-programming/blob/master/LICENSE)**
