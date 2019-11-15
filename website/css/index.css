@@ -2,24 +2,24 @@
 @font-face {
     font-family: Montserrat;
     font-weight: 400;
-    src: url("fonts/Montserrat-Regular.ttf");
+    src: url("fonts/Montserrat-Regular.ttf") format("truetype");
 }
 @font-face {
     font-family: Montserrat;
     font-weight: 700;
-    src: url("fonts/Montserrat-Bold.ttf");
+    src: url("fonts/Montserrat-Bold.ttf") format("truetype");;
 }
 
 /* styling */
 body {
-  background-color: #1d2951;
+  background-color: #fff;
   margin: 0;
 }
 
 h1 {
   font-family: Montserrat, "Arial", sans-serif;
   font-weight: 400;
-  color: #fff;
+  color: #1d2951;
   margin: 1em 2.5em;
   text-align: center;
 }
