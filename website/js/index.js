@@ -38,7 +38,7 @@ json("https://unpkg.com/world-atlas@1.1.4/world/110m.json")
     const paths = svg.selectAll("path")
         .data(countries.features);
     paths.enter().append("path")
-        .attr("d", d => pathGenerator(d))
+        .attr("d", d => pathGenerator(d));
 });
 
 // data ophalen met async / await
