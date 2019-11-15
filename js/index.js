@@ -16,27 +16,11 @@ const nmvw = {
         ?place skos:prefLabel ?placeName .
     }
     ORDER BY DESC(?objCount)`,
-    continentLinks: ["https://hdl.handle.net/20.500.11840/termmaster6025", "https://hdl.handle.net/20.500.11840/termmaster3", "https://hdl.handle.net/20.500.11840/termmaster8401", "https://hdl.handle.net/20.500.11840/termmaster6782", "https://hdl.handle.net/20.500.11840/termmaster19804", "https://hdl.handle.net/20.500.11840/termmaster18062"], // Europe, Afrika, Asia, Oceania, Amerika, North Pole, Antartica
+    continentLinks: ["https://hdl.handle.net/20.500.11840/termmaster6025", "https://hdl.handle.net/20.500.11840/termmaster3", "https://hdl.handle.net/20.500.11840/termmaster8401", "https://hdl.handle.net/20.500.11840/termmaster6782", "https://hdl.handle.net/20.500.11840/termmaster19804", "https://hdl.handle.net/20.500.11840/termmaster18062"], // Europe, Africa, Asia, Oceania, Amerika, North Pole, Antartica
 };
-
-// data ophalen met async / await
 getData(nmvw.apiURL, nmvw.apiQuery);
 
-async function getData(url, query) {
-    const response = await fetch(url+ "?query=" + encodeURIComponent(query) + "&format=json");
-    const json = await response.json();
-    const data = await json.results.bindings;
-    const normalizedData = await data.map(item => {
-        let newArr = {};
-        newArr.amount = Number(item.objCount.value);
-        newArr.category = item.type.value;
-        newArr.place = item.placeName.value;
-        return newArr;
-    });
-    console.log(normalizedData);
-}
-
-// d3
+// visualiseren met d3
 let projection = d3.geoEqualEarth();
 let path = d3.geoPath().projection(projection);
 
@@ -60,3 +44,19 @@ svg.append("path")
         .attr("d", path)
         .style("stroke", "#fff");
 });
+
+// data ophalen met async / await
+async function getData(url, query) {
+    const response = await fetch(url+ "?query=" + encodeURIComponent(query) + "&format=json");
+    const json = await response.json();
+    const data = await json.results.bindings;
+    const normalizedData = await data.map(item => {
+        let newArr = {};
+        newArr.amount = Number(item.objCount.value);
+        newArr.category = item.type.value;
+        newArr.place = item.placeName.value;
+        return newArr;
+    });
+    console.log(normalizedData);
+    return normalizedData;
+}
