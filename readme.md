@@ -66,6 +66,10 @@ Hoe het data-opschoon-patroon gemaakt is, is te zien in de wiki bij **[Proces da
 
 Ook is de data van een studentenenquete opgeschoond d.m.v. functional programming. Dit is te vinden in de wiki bij **[Proces data opschonen (studentenenquête)](https://github.com/qiubee/functional-programming/wiki/Proces-data-opschonen-(studentenenqu%C3%AAte))**.
 
+## Gebruikte voorbeelden
+
+* [Lollipop chart](https://www.d3-graph-gallery.com/graph/lollipop_horizontal.html)
+
 ## Licentie
 
 **[MIT](https://github.com/qiubee/functional-programming/blob/master/LICENSE)**
