@@ -1,7 +1,5 @@
 /*jshint esversion: 8 */
 
-import { select } from "d3-selection";
-
 const nmvw = {
     apiURL: "https://api.data.netwerkdigitaalerfgoed.nl/datasets/ivo/NMVW/services/NMVW-05/sparql",
     apiQuery: `
