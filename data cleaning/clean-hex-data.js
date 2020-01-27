@@ -42,17 +42,19 @@ function makeCorrectHexCodes(list) {
             newList.push(item);
         }
     }
-    function addHash(string) {
-        string = "#" + string;
-        return string;
-    }
-    function multiplyCharactersOfString(string, multiplyBy, start = 0, end = string.length) {
-        let newString = "";
-            for (start; start < end; start++) {
-                    newString = newString + string[start].repeat(multiplyBy);
-                }
-        return newString;
-    }
     console.log("Old list:", list, "\n\nNew list:", newList);
     return newList;
+}
+
+function addHash(string) {
+    string = "#" + string;
+    return string;
+}
+
+function multiplyCharactersOfString(string, multiplyBy, start = 0, end = string.length) {
+    let newString = "";
+        for (start; start < end; start++) {
+                newString = newString + string[start].repeat(multiplyBy);
+            }
+    return newString;
 }
