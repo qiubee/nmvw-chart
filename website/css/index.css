@@ -1,3 +1,11 @@
+/* variables */
+:root {
+  --smooth-font: font-size ease 1s;
+  --smooth-margin: margin ease 1s;
+  --smooth-fill: fill ease 0.4s;
+  --smooth-filter: filter ease 0.4s;
+}
+
 /* fonts */
 @font-face {
     font-family: Montserrat;
@@ -11,42 +19,263 @@
 }
 
 /* set margin & padding to default */
-body, nav ul {
+body, nav ul, h1, h2, p {
   margin: 0;
   padding: 0;
 }
+
+/* hide */
+div h2 {
+  position: absolute;
+  top: -1000em;
+  left: -1000em;
+}
+
 
 /* styling */
 body {
   background-color: #fff;
 }
 
+nav {
+  border-width: 0.125em;
+  border-style: solid;
+  border-image: 
+    linear-gradient( 
+      45deg,
+      #e94e55,
+      #00aaa0,
+      #f16534,
+      #80a932
+    ) 0 1 100%;
+  /* border gradient example from: https://codepen.io/chriscoyier/pen/XodmyY*/
+}
+
 nav ul {
   display: flex;
+  max-width: 80em;
+  margin: -0.05em 0 -0.25em -0.5em;
 }
 
 nav ul li {
   list-style-type: none;
 }
 
-/*
 nav ul li:nth-of-type(3) img {
-  margin-top: -0.16em;
-  height: calc(100% - 3.25em);
+  margin-top: -1%;
 }
-*/
+
+nav ul li:last-of-type img {
+  margin-left: -0.15em;
+}
 
 li img {
-  height: 2.75em;
+  min-height: 2.5em;
+  max-height: 5em;
+  width: 100%;
 }
+
 h1 {
-  font-family: Montserrat, "Arial", sans-serif;
-  font-weight: 400;
-  font-size: 1.5em;
+  font-family: Montserrat, "Helvetica Neue", "Segoe UI", "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 1.25em;
   color: #1d2951;
-  margin: 2em auto;
-  padding: 0 0.75em;
+  line-height: 1.6em;
+  margin: 1em auto;
+  padding: 0 1em;
   text-align: center;
   min-width: 10.75em;
   max-width: 43em;
+  transition: var(--smooth-font), var(--smooth-margin);
+}
+
+div p:first-of-type {
+  font-size: 0.75em;
+  font-style: italic;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 1em 0.75em 1em;
+}
+
+div.noscript {
+  display: flex;
+  flex-direction: column;
+  min-width: 15em;
+  max-width: 77em;
+  margin: 0 auto;
+}
+
+div p.noscript {
+  align-items: stretch;
+  font-size: 0.9em;
+  font-weight: 700;
+  font-style: normal;
+  color: #89a4d6;
+}
+
+svg {
+  /* make full screen width (code from: https://css-tricks.com/full-width-containers-limited-width-parents/) */
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
+  /* -- */
+ / background: rgba(023, 121, 243, 0.8);
+}
+
+footer {
+  max-width: 77em;
+  margin: 0 0.5em 0.5em 0.5em;
+}
+
+footer h2 {
+  margin: 0.5em 0;
+}
+
+footer p {
+  font-size: 0.9em;
+}
+
+h2 {
+  font-family: Montserrat, "Helvetica Neue", "Segoe UI", "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  transition: var(--smooth-font), var(--smooth-margin);
+}
+
+p {
+  font-family: Montserrat, "Helvetica Neue", "Segoe UI", "Roboto", sans-serif;
+  font-weight: 400;
+  color: #666666;
+  margin: 0;
+  transition: var(--smooth-font), var(--smooth-margin);
+}
+
+p a {
+  color: #ea4e55;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+p a:hover {
+  animation: boop 2s; 
+}
+
+p > abbr {
+  color: #696aff;
+  text-decoration: none;
+}
+
+p > abbr:hover {
+  cursor: pointer;
+}
+
+/* tablet */
+@media screen and (min-width: 35em) and (max-width: 65em) {
+
+  h1 {
+    font-size: 1.5em;
+    margin: 2em auto;
+    padding: 0 2em;
+    transition: var(--smooth-font);
+  }
+  
+  footer {
+    margin: 0 1.1em 0.5em 1.1em;
+  }
+  
+  footer h2 {
+    font-size: 1.15em;
+    margin: 0.5em 0;
+    transition: var(--smooth-font);
+  }
+  
+  footer p {
+    font-size: 1em;
+    transition: var(--smooth-font);
+  }
+  
+  div {
+    margin: 0 1.1em 1.5em 1.1em;
+  }
+  
+  div p:first-of-type {
+    font-size: 0.9em;
+    padding: 0 1em 0.9em 1em;
+  }
+  
+  div h3 {
+    font-size: 1.25em;
+  }
+  
+  svg {
+    left: 49%;
+  }
+  
+}
+
+/* laptop */
+@media screen and (min-width: 65em) {
+  
+  nav ul {
+    margin: -0.05em auto -0.25em auto;
+  }
+
+  h1 {
+    font-size: 1.75em;
+    margin: 1.5em auto;
+    padding: auto;
+    transition: var(--smooth-font), var(--smooth-margin);
+  }
+  
+  footer {
+    margin: auto;
+  }
+    
+  footer h2 {
+    font-size: 1.3em;
+    transition: var(--smooth-font);
+  }
+  
+  footer p {
+    font-size: 1em;
+    margin: 0.5em 0;
+    transition: var(--smooth-font);
+  }
+  
+  div {
+    margin: 0 auto 1.5em auto;
+  }
+  
+  div p:first-of-type {
+    font-size: 1em;
+    padding: 0 1em 1em 1em;
+  }
+  
+  div h3 {
+    font-size: 1.5em;
+  }
+  
+  div svg {
+    position: initial;
+    width: initial;
+    left: initial;
+    margin-left: initial;
+  }
+  
+}
+
+/* animations */
+@keyframes boop {
+  0% {
+    color: #ea4e55;
+  }
+  
+  33% {
+    color: #00aaa0;
+  }
+  
+  66% {
+    color: #80a932;
+  }
 }
