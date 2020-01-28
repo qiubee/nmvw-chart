@@ -1,8 +1,12 @@
-/*jshint esversion: 6 */
-
-function makeCorrectHexCodes(list) {
+export function makeCorrectHexCodes(data) {
     let newList = [];
-    for (let item of list) {
+    let listOfStrings = [];
+    data.map(function (item) {
+        Object.keys(item).map(function (key) {
+            listOfStrings.push(item[key]);
+        });
+    });
+    for (let item of listOfStrings) {
         item = item.trim().toUpperCase();
         if (item === "") {
             newList.push(item);
@@ -42,7 +46,6 @@ function makeCorrectHexCodes(list) {
             newList.push(item);
         }
     }
-    console.log("Old list:", list, "\n\nNew list:", newList);
     return newList;
 }
 
