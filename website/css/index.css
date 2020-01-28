@@ -172,6 +172,10 @@ svg .y g text {
   font-size: 1.3em;
 }
 
+svg .x g:first-of-type line {
+  stroke: #fff;
+}
+
 svg .line {
   stroke: black;
   stroke-width: 0.075em;
