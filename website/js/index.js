@@ -61,9 +61,11 @@ visualize();
 
 // --- Visualiseren ---
 async function visualize() {
-deleteNoScript();
-const data = await configureData(nmvw.apiURL, nmvw.apiQuery);
-plotData(data);
+    
+    deleteNoScript();
+    const data = await configureData(nmvw.apiURL, nmvw.apiQuery);
+    addForm(data);
+    setupChart(data);
 }
 
 // Verwijder noscript
@@ -72,72 +74,162 @@ function deleteNoScript() {
     d3.select("div").attr("class", null);
 }
 
-function addElements() {
-// -- Elementen aanmaken --
-    const title = d3
-        .select("div")
-        .append("h2")
-        .text("Visualisatie die de plaats van de vondst en de categorie van objecten in de collectie van het NMVW laat zien.");
+function addForm(data) {
+    const values = data.map(function (d) {
+        return d.key;
+    });
+    const form = d3.select("div")
+        .append("form");
+
+    form.append("label")
+        .attr("for", "select-continent")
+        .text("Kies een werelddeel");
+
+    const select = form.append("select")
+        .attr("name", "continents")
+        .attr("id", "select-continent")
+        .on("change", function (d) {
+            updateChart.call(this, data, 450, 600, d);
+        });
+
+    select.selectAll("option")
+        .data(values)
+        .enter()
+        .append("option")
+        .attr("value", function (d) {
+            return d;
+        })
+        .text(function (d) {
+            return d;
+        });
 }
 
 // Data visualiseren d.m.v. lollipop chart.
-function plotData(data) {
-    // Code voorbeeld: https://www.d3-graph-gallery.com/graph/lollipop_horizontal.html
-    // https://vizhub.com/Razpudding/c635efa650a3433f830c7fb656d9c138?edit=files&file=index.js
-    // https://observablehq.com/@d3/selection-join
+function setupChart(data) {
 
-    const height = 400;
+    const height = 450;
     const width = 600;
-    const margin = {top: 50, left: 50};
-    const max = d3.max(data.map(function (d) { return d.objects;}));
+    const margin = {top: 70, left: 310};
 
     const svg = d3
         .select("div")
         .append("svg")
-        .attr("height", height + margin.top)
-        .attr("width", width + margin.left)
+        // .attr("height", height + margin.top)
+        // .attr("width", width + margin.left)
+        .attr("viewBox", "0 0 " + (width + margin.left) + " " + (height + margin.top))
         .append("g")
         .attr("transform", "translate(" + margin.left + ",0)");
 
+    svg.append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .attr("class", "x")
+        .append("text")
+            .text("aantal objecten")
+            .attr("transform", "translate(" + (width - margin.top) + "," + (margin.top - (margin.top / 10))+ ")");
+
+    svg.append("g")
+        .attr("class", "y")
+        .append("text")
+            .text("categorie")
+            .attr("transform", "translate(" + (-margin.left + 10) +"," + margin.top + ") rotate(-90)");
+
+    updateChart(data, height, width);
+}
+
+// Update lollipop chart
+function updateChart(data, height, width) {
+    // Code voorbeeld chart: https://www.d3-graph-gallery.com/graph/lollipop_horizontal.html
+    // Code voorbeeld interactie: 
+    // https://vizhub.com/Razpudding/c635efa650a3433f830c7fb656d9c138?edit=files&file=index.js
+
+    const selected = this ? this.value : "Azië";
+    let selectedData;
+    data.map(function (d) {
+        if (selected === d.key) {
+            selectedData = d.categories;
+            return;
+        }
+    });
+
+    selectedData.sort(function (a, b) {
+        return d3.descending(a.objects, b.objects);
+    });
+
+    const max = d3.max(selectedData.map(function (d) { return d.objects; }));
+    const svg = d3.select("div svg g");
     const x = d3.scaleLinear()
         .domain([0, (max + (max / 100 * 10))])
         .range([0, width]);
-
     const y = d3.scaleBand()
         .range([0, height])
-        .domain(data.map(function(d) { return d.key; }))
+        .domain(selectedData.map(function(d) { return d.key; }))
         .padding(1);
-    
-    svg.append("g")
-        .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x))
-        .selectAll("text")
+    const t = d3.transition().duration(950).ease(d3.easeBackInOut);
+    const e = d3.transition().duration(750).ease(d3.easeQuadInOut);
+
+    svg.selectAll(".line")
+        .data(selectedData)
+        .join(
+            // lijnen toevoegen
+            function (enter) { 
+                enter.append("line")
+                    .attr("class", "line")
+                    .transition(t)
+                    .attr("x1", function (d) { return x(d.objects); })
+                    .attr("x2", x(0))
+                    .attr("y1", function (d) { return y(d.key); })
+                    .attr("y2", function (d) { return y(d.key); });
+        },  // positie en lengte updaten
+            function (update) {
+                update.transition(t)
+                    .attr("x1", function (d) { return x(d.objects); })
+                    .attr("x2", x(0))
+                    .attr("y1", function (d) { return y(d.key); })
+                    .attr("y2", function (d) { return y(d.key); });
+        },  // lege elementen verwijderen
+            function (exit) { exit.remove(); }
+        );
+
+    svg.selectAll(".circle")
+        .data(selectedData)
+        .join(
+            // cirkels toevoegen
+            function (enter) { 
+                enter.append("circle")
+                    .attr("class", "circle")
+                    .transition(t)
+                    .attr("cx", function (d) { return x(d.objects) + 5; })
+                    .attr("cy", function (d) { return y(d.key); })
+                    .attr("r", 4);
+
+        },  // positie updaten
+            function (update) { 
+                update.transition(t)
+                    .attr("cx", function (d) { return x(d.objects) + 2.5; })
+                    .attr("cy", function (d) { return y(d.key); });
+        },  // lege elementen verwijderen
+            function (exit) { exit.remove(); }
+        );
+
+    svg.select(".x")
+        .transition(e)
+        .call(d3.axisBottom(x).tickSize(5))
+        .selectAll(".tick text")
             .attr("transform", "translate(-10, 2) rotate(-45)")
             .style("text-anchor", "end");
 
-    svg.append("g")
-        .call(d3.axisLeft(y));
+    svg.select(".y")
+        .transition(t)
+        .call(d3.axisLeft(y).tickSize(0))
+        .selectAll(".tick text")
+            .attr("transform", "translate(-10, 0)");
     
-    // lijnen toevoegen
-    svg.selectAll()
-        .data(data)
-        .enter()
-        .append("line")
-        .attr("x1", function(d) { return x(d.objects); })
-        .attr("x2", x(0))
-        .attr("y1", function(d) { return y(d.key); })
-        .attr("y2", function(d) { return y(d.key); })
-        .attr("stroke", "black");
-
-    // cirkels toevoegen
-    svg.selectAll("circles")
-        .data(data)
-        .enter()
-        .append("circle")
-        .attr("cx", function(d) { return x(d.objects); })
-        .attr("cy", function(d) { return y(d.key); })
-        .attr("r", 3.5)
-        .attr("stroke", "black");
+    // Verkleint grootte lettertype van naam categorie
+    for (const category of document.querySelectorAll(".y .tick text")) {
+        if (category.__data__.length >= 45 ) {
+            d3.select(category).style("font-size", 1 + "em");
+        }
+    }
 
 }
 
