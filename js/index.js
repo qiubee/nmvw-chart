@@ -61,7 +61,6 @@ visualize();
 
 // --- Visualiseren ---
 async function visualize() {
-    
     deleteNoScript();
     const data = await configureData(nmvw.apiURL, nmvw.apiQuery);
     addForm(data);
@@ -375,7 +374,7 @@ function calculateData(data) {
         continent.objects = objects;
     });
 
-    // tel alle objecten per categorie van continent
+    // tel alle objecten per categorie per continent
     data.forEach(function (continent) {
         for (let category of continent.categories) {
             let objects = 0;
