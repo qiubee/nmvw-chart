@@ -69,6 +69,7 @@ Ook is de data van een studentenenquete opgeschoond d.m.v. functional programmin
 ## Gebruikte voorbeelden
 
 * [Lollipop chart](https://www.d3-graph-gallery.com/graph/lollipop_horizontal.html)
+* [Chart interaction](https://vizhub.com/Razpudding/c635efa650a3433f830c7fb656d9c138?edit=files&file=index.js)
 
 ## Licentie
 
