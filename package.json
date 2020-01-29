@@ -1,7 +1,7 @@
 {
   "name": "functional-programming",
   "version": "1.0.0",
-  "description": "Datavisualisation for Tropenmuseum using data from NMVW",
+  "description": "Datavisualisation about the collection of the National Museum of Worldcultures",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -12,7 +12,11 @@
     "url": "git+https://github.com/qiubee/functional-programming.git"
   },
   "keywords": [
-    "datavisualisation"
+    "d3",
+    "javascript",
+    "visualisation",
+    "d3-visualization",
+    "visualization"
   ],
   "author": "qiubee",
   "license": "MIT",
@@ -21,8 +25,6 @@
   },
   "homepage": "https://github.com/qiubee/functional-programming#readme",
   "dependencies": {
-    "d3-collection": "^1.0.7",
-    "d3-selection": "^1.4.0",
     "express": "^4.17.1"
   },
   "devDependencies": {
