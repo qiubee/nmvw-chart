@@ -264,7 +264,7 @@ function transformData(data) {
 
 // Data filteren
 function filterData(data) {
-    data = data.map(item => {
+    data = data.map(function (item) {
         let filtered = {};
         if (item.hasOwnProperty("continent") === true) {
             filtered.continent = item.continent.value;
