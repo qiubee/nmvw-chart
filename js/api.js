@@ -72,7 +72,7 @@ const queries = {
 	PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 	PREFIX edm: <http://www.europeana.eu/schemas/edm/>
 		
-	SELECT ?continent ?category (COUNT(?cho) AS ?objCount) WHERE {
+	SELECT ?continent ?category (COUNT(?obj) AS ?objCount) WHERE {
 		  
 	# CONTINENTEN
 	# zoekt alle continenten
@@ -83,7 +83,7 @@ const queries = {
 	?geoTerm skos:narrower* ?allGeoTerms .
 		
 	# geeft objecten bij de onderliggende geografische termen
-	?cho dct:spatial ?allGeoTerms .
+	?obj dct:spatial ?allGeoTerms .
 		  
 	# CATEGORIEEN
 	# zoekt alle hoofdcategorieen
@@ -94,7 +94,7 @@ const queries = {
 	?catTerm skos:narrower* ?allCatTerms .
 		  
 	# geeft objecten bij alle onderliggende categorische termen
-	?cho edm:isRelatedTo ?allCatTerms
+	?obj edm:isRelatedTo ?allCatTerms
 		  
 	}
 	GROUP BY ?continent ?category
