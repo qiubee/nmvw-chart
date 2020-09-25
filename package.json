@@ -1,17 +1,18 @@
 {
-  "name": "functional-programming",
+  "name": "nmvw-chart",
   "version": "1.0.1",
-  "description": "Datavisualisation about the collection of the National Museum of Worldcultures",
+  "description": "Interactive data chart of the collection of the National Museum of Worldcultures",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js",
+	"dev": "nodemon index.js",
+	"predev": "npm run lint",
 	"lint": "eslint \"app/js/*.js\"",
 	"fix": "eslint \"app/js/*.js\" --fix"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/qiubee/functional-programming.git"
+    "url": "git+https://github.com/qiubee/nmvw-chart.git"
   },
   "keywords": [
     "d3",
@@ -23,9 +24,9 @@
   "author": "qiubee",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/qiubee/functional-programming/issues"
+    "url": "https://github.com/qiubee/nmvw-chart/issues"
   },
-  "homepage": "https://github.com/qiubee/functional-programming#readme",
+  "homepage": "https://github.com/qiubee/nmvw-chart#readme",
   "dependencies": {
     "express": "^4.17.1"
   },
