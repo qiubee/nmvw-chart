@@ -5,7 +5,7 @@ visualize();
 // --- Visualiseren ---
 async function visualize() {
 	deleteNoScript();
-	const data = await configureData(api.originalURL, queries.queryCCT);
+	const data = await configureData(api.generalURL, queries.queryCCT);
 	addForm(data);
 	setupChart(data);
 }
