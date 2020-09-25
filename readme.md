@@ -34,13 +34,13 @@ Gebruik `localhost:8000` in de browser om de app te bekijken.
 
 ## Data
 
-De data wordt opgehaald uit de API van het NMVW. Het NMVW gebruikt SPARQL voor het ophalen van data uit de collectie. De data die daaruit op wil halen is:
+De data wordt opgehaald uit de API van het NMVW. Het NMVW gebruikt SPARQL voor het ophalen van data uit de collectie. De data die daaruit wordt opgehaald is:
 
 * Geografische herkomst
 * Categorie
-* Aantal objecten per werelddeel
+* Aantal objecten
 
-In SPARQL zijn `dct:spatial` en `dc:type` gebruikt om de plaats en het type van het object op te halen. En met `(COUNT() AS())` zijn de objecten bij elkaar opgeteld.
+In SPARQL zijn `dct:spatial` en `edm:isRelatedTo` gebruikt om de plaats en de categorie van het object op te halen. En met `(COUNT() AS())` zijn de objecten bij elkaar opgeteld.
 
 Hieronder staat de query die is gebruikt voor het ophalen van de data:
 
@@ -50,16 +50,34 @@ PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX edm: <http://www.europeana.eu/schemas/edm/>
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
-SELECT ?placeName ?type (COUNT(?obj) AS ?objAmount)  WHERE {
-    # <hier de link uit thesaurus van werelddeel>
-    skos:narrower* ?place .
-    ?obj dc:type ?type ;
-         dct:spatial ?place .
-    ?place skos:prefLabel ?placeName .
+SELECT ?continent ?category (COUNT(?obj) AS ?objCount) WHERE {
+
+# CONTINENTEN
+# zoekt alle continenten
+<https://hdl.handle.net/20.500.11840/termmaster2> skos:narrower ?geoTerm .
+?geoTerm skos:prefLabel ?continent .
+
+# geeft per continent de onderliggende geografische termen
+?geoTerm skos:narrower* ?allGeoTerms .
+
+# geeft objecten bij de onderliggende geografische termen
+?obj dct:spatial ?allGeoTerms .
+
+# CATEGORIEEN
+# zoekt alle hoofdcategorieen
+<https://hdl.handle.net/20.500.11840/termmaster2802> skos:narrower ?catTerm .
+?catTerm skos:prefLabel ?category .
+
+# geeft per categorie alle onderliggende categorische termen
+?catTerm skos:narrower* ?allCatTerms .
+
+# geeft objecten bij alle onderliggende categorische termen
+?obj edm:isRelatedTo ?allCatTerms
+
 }
-ORDER BY DESC(?objAmount)
+GROUP BY ?continent ?category
+ORDER BY DESC(?objCount)
 ```
 
 ### Opschonen data
