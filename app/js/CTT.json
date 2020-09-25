@@ -1,0 +1,487 @@
+[
+  {
+    "continent": "Azië",
+    "category": "communicatie",
+    "objCount": "198783"
+  },
+  {
+    "continent": "Azië",
+    "category": "kunst",
+    "objCount": "58362"
+  },
+  {
+    "continent": "Azië",
+    "category": "kleding en persoonlijke versiering",
+    "objCount": "51432"
+  },
+  {
+    "continent": "Amerika",
+    "category": "communicatie",
+    "objCount": "43503"
+  },
+  {
+    "continent": "Azië",
+    "category": "vestiging",
+    "objCount": "36142"
+  },
+  {
+    "continent": "Azië",
+    "category": "religie en ritueel",
+    "objCount": "31114"
+  },
+  {
+    "continent": "Azië",
+    "category": "nijverheid, handel en dienstverlening",
+    "objCount": "29911"
+  },
+  {
+    "continent": "Azië",
+    "category": "voeding, drank, genotmiddelen",
+    "objCount": "27899"
+  },
+  {
+    "continent": "Azië",
+    "category": "wapens",
+    "objCount": "27680"
+  },
+  {
+    "continent": "Afrika",
+    "category": "communicatie",
+    "objCount": "18003"
+  },
+  {
+    "continent": "Eurazië",
+    "category": "communicatie",
+    "objCount": "16149"
+  },
+  {
+    "continent": "Afrika",
+    "category": "kleding en persoonlijke versiering",
+    "objCount": "13776"
+  },
+  {
+    "continent": "Azië",
+    "category": "popular culture",
+    "objCount": "12528"
+  },
+  {
+    "continent": "Amerika",
+    "category": "kleding en persoonlijke versiering",
+    "objCount": "11137"
+  },
+  {
+    "continent": "Azië",
+    "category": "vervoer",
+    "objCount": "10212"
+  },
+  {
+    "continent": "Oceanië",
+    "category": "communicatie",
+    "objCount": "9497"
+  },
+  {
+    "continent": "Afrika",
+    "category": "nijverheid, handel en dienstverlening",
+    "objCount": "9135"
+  },
+  {
+    "continent": "Azië",
+    "category": "jacht, visserij, voedselgaring",
+    "objCount": "8952"
+  },
+  {
+    "continent": "Amerika",
+    "category": "religie en ritueel",
+    "objCount": "8320"
+  },
+  {
+    "continent": "Azië",
+    "category": "ontspanning, sport en spel",
+    "objCount": "7898"
+  },
+  {
+    "continent": "Amerika",
+    "category": "nijverheid, handel en dienstverlening",
+    "objCount": "7640"
+  },
+  {
+    "continent": "Afrika",
+    "category": "wapens",
+    "objCount": "7456"
+  },
+  {
+    "continent": "Afrika",
+    "category": "religie en ritueel",
+    "objCount": "7308"
+  },
+  {
+    "continent": "Azië",
+    "category": "sociaal, politiek, juridisch",
+    "objCount": "6783"
+  },
+  {
+    "continent": "Oceanië",
+    "category": "wapens",
+    "objCount": "6725"
+  },
+  {
+    "continent": "Amerika",
+    "category": "kunst",
+    "objCount": "6464"
+  },
+  {
+    "continent": "Amerika",
+    "category": "vestiging",
+    "objCount": "6331"
+  },
+  {
+    "continent": "Amerika",
+    "category": "voeding, drank, genotmiddelen",
+    "objCount": "6109"
+  },
+  {
+    "continent": "Afrika",
+    "category": "voeding, drank, genotmiddelen",
+    "objCount": "5833"
+  },
+  {
+    "continent": "Afrika",
+    "category": "kunst",
+    "objCount": "5704"
+  },
+  {
+    "continent": "Afrika",
+    "category": "vestiging",
+    "objCount": "5688"
+  },
+  {
+    "continent": "Azië",
+    "category": "onbepaald",
+    "objCount": "5682"
+  },
+  {
+    "continent": "Azië",
+    "category": "lichaamsverzorging, geneeskunde, persoonlijk comfort",
+    "objCount": "5600"
+  },
+  {
+    "continent": "Azië",
+    "category": "land-, tuin- en bosbouw",
+    "objCount": "5303"
+  },
+  {
+    "continent": "Oceanië",
+    "category": "kleding en persoonlijke versiering",
+    "objCount": "5030"
+  },
+  {
+    "continent": "Azië",
+    "category": "levenscyclus",
+    "objCount": "4935"
+  },
+  {
+    "continent": "Afrika",
+    "category": "levenscyclus",
+    "objCount": "4635"
+  },
+  {
+    "continent": "Azië",
+    "category": "strijd en oorlog",
+    "objCount": "4606"
+  },
+  {
+    "continent": "Amerika",
+    "category": "onbepaald",
+    "objCount": "4536"
+  },
+  {
+    "continent": "Oceanië",
+    "category": "religie en ritueel",
+    "objCount": "3249"
+  },
+  {
+    "continent": "Amerika",
+    "category": "wapens",
+    "objCount": "3223"
+  },
+  {
+    "continent": "Eurazië",
+    "category": "kunst",
+    "objCount": "3115"
+  },
+  {
+    "continent": "Amerika",
+    "category": "jacht, visserij, voedselgaring",
+    "objCount": "3084"
+  },
+  {
+    "continent": "Afrika",
+    "category": "sociaal, politiek, juridisch",
+    "objCount": "3072"
+  },
+  {
+    "continent": "Oceanië",
+    "category": "voeding, drank, genotmiddelen",
+    "objCount": "2696"
+  },
+  {
+    "continent": "Oceanië",
+    "category": "jacht, visserij, voedselgaring",
+    "objCount": "2494"
+  },
+  {
+    "continent": "Amerika",
+    "category": "vervoer",
+    "objCount": "2250"
+  },
+  {
+    "continent": "Oceanië",
+    "category": "nijverheid, handel en dienstverlening",
+    "objCount": "2198"
+  },
+  {
+    "continent": "Oceanië",
+    "category": "kunst",
+    "objCount": "2072"
+  },
+  {
+    "continent": "Afrika",
+    "category": "onbepaald",
+    "objCount": "2041"
+  },
+  {
+    "continent": "Eurazië",
+    "category": "nijverheid, handel en dienstverlening",
+    "objCount": "2038"
+  },
+  {
+    "continent": "Amerika",
+    "category": "ontspanning, sport en spel",
+    "objCount": "1664"
+  },
+  {
+    "continent": "Oceanië",
+    "category": "vestiging",
+    "objCount": "1601"
+  },
+  {
+    "continent": "Afrika",
+    "category": "lichaamsverzorging, geneeskunde, persoonlijk comfort",
+    "objCount": "1575"
+  },
+  {
+    "continent": "Oceanië",
+    "category": "vervoer",
+    "objCount": "1410"
+  },
+  {
+    "continent": "Afrika",
+    "category": "vervoer",
+    "objCount": "1302"
+  },
+  {
+    "continent": "Amerika",
+    "category": "levenscyclus",
+    "objCount": "1270"
+  },
+  {
+    "continent": "Eurazië",
+    "category": "kleding en persoonlijke versiering",
+    "objCount": "1269"
+  },
+  {
+    "continent": "Afrika",
+    "category": "jacht, visserij, voedselgaring",
+    "objCount": "1179"
+  },
+  {
+    "continent": "Oceanië",
+    "category": "levenscyclus",
+    "objCount": "1160"
+  },
+  {
+    "continent": "Amerika",
+    "category": "popular culture",
+    "objCount": "1156"
+  },
+  {
+    "continent": "Eurazië",
+    "category": "popular culture",
+    "objCount": "979"
+  },
+  {
+    "continent": "Afrika",
+    "category": "popular culture",
+    "objCount": "895"
+  },
+  {
+    "continent": "Eurazië",
+    "category": "vestiging",
+    "objCount": "763"
+  },
+  {
+    "continent": "Azië",
+    "category": "veeteelt en producten",
+    "objCount": "708"
+  },
+  {
+    "continent": "Amerika",
+    "category": "sociaal, politiek, juridisch",
+    "objCount": "628"
+  },
+  {
+    "continent": "Amerika",
+    "category": "lichaamsverzorging, geneeskunde, persoonlijk comfort",
+    "objCount": "623"
+  },
+  {
+    "continent": "Afrika",
+    "category": "land-, tuin- en bosbouw",
+    "objCount": "608"
+  },
+  {
+    "continent": "Afrika",
+    "category": "ontspanning, sport en spel",
+    "objCount": "595"
+  },
+  {
+    "continent": "Oceanië",
+    "category": "strijd en oorlog",
+    "objCount": "568"
+  },
+  {
+    "continent": "Eurazië",
+    "category": "voeding, drank, genotmiddelen",
+    "objCount": "559"
+  },
+  {
+    "continent": "Eurazië",
+    "category": "sociaal, politiek, juridisch",
+    "objCount": "526"
+  },
+  {
+    "continent": "Eurazië",
+    "category": "ontspanning, sport en spel",
+    "objCount": "515"
+  },
+  {
+    "continent": "Oceanië",
+    "category": "lichaamsverzorging, geneeskunde, persoonlijk comfort",
+    "objCount": "453"
+  },
+  {
+    "continent": "Afrika",
+    "category": "strijd en oorlog",
+    "objCount": "448"
+  },
+  {
+    "continent": "Oceanië",
+    "category": "sociaal, politiek, juridisch",
+    "objCount": "392"
+  },
+  {
+    "continent": "Eurazië",
+    "category": "jacht, visserij, voedselgaring",
+    "objCount": "308"
+  },
+  {
+    "continent": "Amerika",
+    "category": "land-, tuin- en bosbouw",
+    "objCount": "308"
+  },
+  {
+    "continent": "Oceanië",
+    "category": "land-, tuin- en bosbouw",
+    "objCount": "304"
+  },
+  {
+    "continent": "Oceanië",
+    "category": "onbepaald",
+    "objCount": "272"
+  },
+  {
+    "continent": "Afrika",
+    "category": "veeteelt en producten",
+    "objCount": "264"
+  },
+  {
+    "continent": "Eurazië",
+    "category": "vervoer",
+    "objCount": "254"
+  },
+  {
+    "continent": "Eurazië",
+    "category": "religie en ritueel",
+    "objCount": "215"
+  },
+  {
+    "continent": "Oceanië",
+    "category": "ontspanning, sport en spel",
+    "objCount": "168"
+  },
+  {
+    "continent": "Eurazië",
+    "category": "wapens",
+    "objCount": "166"
+  },
+  {
+    "continent": "Eurazië",
+    "category": "onbepaald",
+    "objCount": "137"
+  },
+  {
+    "continent": "Oceanië",
+    "category": "popular culture",
+    "objCount": "115"
+  },
+  {
+    "continent": "Amerika",
+    "category": "strijd en oorlog",
+    "objCount": "88"
+  },
+  {
+    "continent": "Eurazië",
+    "category": "levenscyclus",
+    "objCount": "79"
+  },
+  {
+    "continent": "Eurazië",
+    "category": "lichaamsverzorging, geneeskunde, persoonlijk comfort",
+    "objCount": "63"
+  },
+  {
+    "continent": "Amerika",
+    "category": "veeteelt en producten",
+    "objCount": "54"
+  },
+  {
+    "continent": "Eurazië",
+    "category": "veeteelt en producten",
+    "objCount": "34"
+  },
+  {
+    "continent": "Oceanen",
+    "category": "communicatie",
+    "objCount": "30"
+  },
+  {
+    "continent": "Eurazië",
+    "category": "strijd en oorlog",
+    "objCount": "27"
+  },
+  {
+    "continent": "Eurazië",
+    "category": "land-, tuin- en bosbouw",
+    "objCount": "24"
+  },
+  {
+    "continent": "Oceanië",
+    "category": "veeteelt en producten",
+    "objCount": "3"
+  },
+  {
+    "continent": "Antarctica",
+    "category": "communicatie",
+    "objCount": "2"
+  }
+]
