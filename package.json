@@ -1,6 +1,6 @@
 {
   "name": "functional-programming",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Datavisualisation about the collection of the National Museum of Worldcultures",
   "main": "index.js",
   "scripts": {
