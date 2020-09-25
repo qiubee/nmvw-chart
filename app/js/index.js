@@ -1,5 +1,3 @@
-/*jshint esversion: 8 */
-
 import { api , queries } from "./api.js";
 
 visualize();
