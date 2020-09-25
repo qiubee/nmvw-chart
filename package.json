@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-	"lint": "eslint \"app/js/index.js\"",
-	"fix": "eslint \"app/js/index.js\" --fix"
+	"lint": "eslint \"app/js/*.js\"",
+	"fix": "eslint \"app/js/*.js\" --fix"
   },
   "repository": {
     "type": "git",
