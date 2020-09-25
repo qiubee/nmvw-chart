@@ -4,7 +4,9 @@ Voor een nieuwe tentoonstelling over de collectie van het Tropenmuseum in Amster
 
 De datavisualisatie is gemaakt met **d3**. Verder zijn Node.js en Express gebruikt voor het bouwen van de applicatie.
 
-**[Bekijk datavisualisatie](https://qiubee.github.io/functional-programming/)**
+![Linechart showing 19 categories with objects from Asia. Ordered by amount of objects inside each category from high to low. The category communication has the most amount of objects and cattle breeding and products the least amount of objects.](images/preview.png)
+
+**[Bekijk datavisualisatie](https://qiubee.github.io/nmvw-chart/)**
 
 ## Benodigdheden
 
@@ -18,7 +20,7 @@ Andere benodigdheden zijn te vinden in [`package.json`](https://github.com/qiube
 
 Een datavisualisatie die de collectie van het Nationaal Museum van Wereldculturen laat zien. Door middel van een wereldkaart wordt er met bolletjes weergegeven hoeveel objecten er per werelddeel in de collectie zitten. In de bolletjes wordt een cirkeldiagram getoond die de top 3 laat zien van categorieën waar de meeste objecten in te vinden zijn.
 
-![World map with pie charts showing top 3 of categories with the most objects found in the collection of the National Museum of Worldcultures](https://github.com/qiubee/functional-programming/blob/master/images/Concept-small.jpg)
+![World map with pie charts showing top 3 of categories with the most objects found in the collection of the National Museum of Worldcultures](images/Concept-small.jpg)
 
 ## Installeren
 
